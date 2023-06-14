@@ -1,28 +1,39 @@
-import { describe } from 'vitest'
-import fetch from "node-fetch";
+import { describe, expect } from 'vitest'
+import { fetchTodos } from '../../3 Asynchronous/fetchTodo'
 
-describe.only('Testing asynchronous functions', ()=>{
-    it.skip('successful res', async ()=>{
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-        const responseJSON = await response.json();
-        expect(responseJSON).toEqual( 
-            { 
-              userId: 1,
-              id: 1,
-              title: 'delectus aut autem',
-              completed: false 
-            })
+describe('Testing asynchronous functions', ()=>{
+    test('successful res', async ()=>{
+
+        let fetchId = 1; // Id can be between 1 to 100
+        
+        // Below url give us some dummy todo data based on id.
+        const fetchedTodo = await fetchTodos(`https://jsonplaceholder.typicode.com/todos/${fetchId}`);
+        
+        // Type of 'fetchedTodo' fetched from fetchTodos,  
+
+        /*
+        fetchedTodo = {
+           userId: number;
+           id: number;
+           title: string;
+           completed:  boolean;
+        }
+        */
+        
+        // As fetchedTodo contain dynamic data we can check these following . . .
+        expect(fetchedTodo).toBeDefined() // PASS - as it is defined
+        expect(fetchedTodo).toHaveProperty('userId') // PASS - as it have this property
+        expect(fetchedTodo).toHaveProperty('id') // PASS - as it have this property
+        expect(fetchedTodo).toHaveProperty('title') // PASS - as it have this property
+        expect(fetchedTodo).toHaveProperty('completed') // PASS - as it have this property
     })
 
-    it('failed response', async ()=>{
-        try{
-            const response = await fetch('https://www.google.com/randompath')
-            if(!response.ok) throw {
-                status: response.status,
-                statusText: response.statusText
-            }
-        }catch(e){
-            expect(e).toEqual({ status: 404, statusText: 'Not Found' })
-        }
+    test('failed response', async ()=>{
+
+        // Below url give us ERROR 404 : NOT FOund.
+        const fetchedTodo = await fetchTodos('https://www.google.com/randompath');
+        expect(fetchedTodo).toMatch(/404/) // PASS - toMatch work as a regex
+        expect(fetchedTodo).toMatch('404') // PASS - toMatch work as a regex
+        expect(fetchedTodo).toBe('404 : NOT Found x_x') // PASS - match the exact error message      
     })
 })

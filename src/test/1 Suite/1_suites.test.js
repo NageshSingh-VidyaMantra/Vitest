@@ -1,30 +1,60 @@
-import { describe, expect, test } from 'vitest'
-import {doSum, doSubtract, doMultiply, doDivide} from '../../1 Arithemetic/Airthemetic' 
+import { describe, test } from 'vitest'
 
 // To create Suite use the describe function,
 // which takes two argument
 // describe( " Suite Name/ description ", "callback function implementaion")
 
 // suite - 1
-describe('Testing My Arithemetic Function', ()=>{
+describe('Testing My Custom Function from File 1', ()=>{
 
-test("Testing doSum",()=>{
-    expect(doSum(2, 5)).toBe(7)
-    expect(doSum(10, 20)).toBe(30)
+    /** Multiple test can be written in a suite */
+
+    // TEST - 1
+    // like describe, test also take two arguments
+    // test( " Test Name/ description ", "callback function implementaion")
+    test('My first test case', ()=>{
+        
+        // Here we do the unit testing by matching,
+        // Expected value : value we provide to the test.
+        // Received value : value the test get after the expression or function is resolved.
+        // at the end check is Received value = Expected value.
+        // if YES, test Pass
+        // else test Fail 
+    
+    })
+
+    // TEST - 2
+    test('My second test case', ()=>{})
+
+    // TEST - 3
+    test('My third test case', ()=>{})
+
 })
 
-test("Testing doSubtract", ()=>{
-    expect(doSubtract(10, 5)).toBe(5)
-    expect(doSubtract(25, 5)).toBe(20)
+// suite - 2
+describe('Testing My Custom Function from File 2', ()=>{
+
+    // TEST - 1
+    test('My first test case', ()=>{})
+
+    // TEST - 2
+    test('My second test case', ()=>{})
+
+    // TEST - 3
+    test('My third test case', ()=>{})
+
 })
 
-test("Testing doMultiply",()=>{
-    expect(doMultiply(10, 5)).toBe(50)
-    expect(doMultiply(25, 5)).toBe(125)
-})
+// suite - 3
+describe('Testing My Custom Function from File 3', ()=>{
 
-test("Testing doDivide", ()=>{
-    expect(doDivide(10, 5)).toBe(2)
-    expect(doDivide(25, 5)).toBe(5)
-})
+    // TEST - 1
+    test('My first test case', ()=>{})
+
+    // TEST - 2
+    test('My second test case', ()=>{})
+
+    // TEST - 3
+    test('My third test case', ()=>{})
+
 })

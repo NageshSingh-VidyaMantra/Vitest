@@ -1,3 +1,7 @@
+/* 
+  This File contain basic arithematic functions
+*/
+
 export function doSum(a: number, b: number){
     return a + b;
 }

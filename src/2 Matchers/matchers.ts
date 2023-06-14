@@ -15,6 +15,9 @@ export const apple4 = {
     weight: '150 gm'
 }
 
+/* 
+  This function return shopping list
+*/
 export function getShoppingList(){
 return [
 'Milk',
@@ -42,6 +45,9 @@ return [
 ];
 }
 
+/* 
+  This function return shopping list with there count
+*/
 export function getShoppingListWithCount(){
     return [
     {item: 'Milk', count: 3},
