@@ -16,7 +16,7 @@ import fetch from "node-fetch";
    -> afterAll - this function executes once after test are resolved
 */
 
-describe.skip(' Testing - Fetch random user Data . . . ', ()=>{
+describe(' Testing - Fetch random user Data . . . ', ()=>{
     
     let userData = null;
     let userId = getRandomId(); // This function give us random Id between 0 to 100 
