@@ -1,3 +1,8 @@
+# Directions
+#### 1. Test are written inside test directory.
+#### 2. Start sequentially from 1. suites --> 2. Matchers --> ... , Don't jump among directory.
+#### 3. To Run test on terminal use cmd " npm run test " 
+
 # Vue 3 + TypeScript + Vite
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
